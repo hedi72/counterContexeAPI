@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ComponentA from "./components/ComponentA";
+import Counter from "./components/Counter";
+import CounterContextProvider from "./contexts/CounterContext";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Context API</h1>
+      <Counter />
+      <ComponentA />
     </div>
   );
 }
 
-export default App;
+function Root() {
+  return (
+    <CounterContextProvider>
+      <App />
+    </CounterContextProvider>
+  );
+}
+
+export default Root;
+// export default App;
